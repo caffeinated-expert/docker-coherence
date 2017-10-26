@@ -9,7 +9,7 @@ RUN mkdir /u01 && chmod a+xr /u01 && \
     mkdir /home/oracle && \
     chown oracle /home/oracle
 
-RUN curl -o https://storage.googleapis.com/gcp-gdis-tools/public/downloads/$COH_INSTALLER /u01/$COH_INSTALLER
+RUN curl -o /u01/$COH_INSTALLER https://storage.googleapis.com/gcp-gdis-tools/public/downloads/$COH_INSTALLER
 COPY coh.rsp /u01/
 COPY oraInst.loc /u01/oraInst.loc
 
