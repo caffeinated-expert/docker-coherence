@@ -21,8 +21,8 @@ ENV COHERENCE_HOME=/u01/app/oracle/coherence/coherence
 
 USER oracle
 
-RUN java -jar /u01/$COH_INSTALLER -silent -force -responseFile /u01/coh.rsp -invPtrLoc /u01/oraInst.loc -jreLoc $JAVA_HOME \
-  && rm /u01/$COH_INSTALLER \
-  && rm /u01/coh.rsp \
-  && rm /u01/oraInst.loc \
-  && rm -rf /tmp/OraInstall*
+#RUN java -jar /u01/$COH_INSTALLER -silent -force -responseFile /u01/coh.rsp -invPtrLoc /u01/oraInst.loc -jreLoc $JAVA_HOME \
+#  && rm /u01/$COH_INSTALLER \
+#  && rm /u01/coh.rsp \
+#  && rm /u01/oraInst.loc \
+#  && rm -rf /tmp/OraInstall*
