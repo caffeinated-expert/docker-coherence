@@ -10,6 +10,7 @@ RUN mkdir /u01 && chmod a+xr /u01 && \
     chown oracle /home/oracle
 
 RUN curl -o /u01/$COH_INSTALLER https://storage.googleapis.com/gcp-gdis-tools/public/downloads/$COH_INSTALLER
+
 #COPY coh.rsp /u01/
 #COPY oraInst.loc /u01/oraInst.loc
 
@@ -21,6 +22,11 @@ RUN ls -l /u01/$COH_INSTALLER
 ENV COHERENCE_HOME=/u01/app/oracle/coherence/coherence
 
 USER oracle
+
+RUN curl -o /u01/cache-server.sh https://storage.googleapis.com/gcp-gdis-tools/public/downloads/cache-server.sh \
+&& curl -o /u01/coherence.sh https://storage.googleapis.com/gcp-gdis-tools/public/downloads/coherence.sh \
+&& curl -o /u01/tangosol-coherence-override.xml https://storage.googleapis.com/gcp-gdis-tools/public/downloads/tangosol-coherence-override.xml \
+&& chmod +x /u01/*.sh
 
 #RUN java -jar /u01/$COH_INSTALLER -silent -force -responseFile /u01/coh.rsp -invPtrLoc /u01/oraInst.loc -jreLoc $JAVA_HOME \
 #  && rm /u01/$COH_INSTALLER \
